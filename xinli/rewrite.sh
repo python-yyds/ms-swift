@@ -7,7 +7,7 @@ swift sft \
     --dataset /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/rewritten_mechat/Cpsy_40_rewritten.json /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/rewritten_mechat/mechat_40_rewritten.json /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/rewritten/PsyDTCorpus_40_rewritten.json \
     --dataset_num_proc 16 \
     --split_dataset_ratio 0.1 \
-    --max_length 4096 \
+    --max_length 8192 \
     --task_type causal_lm \
     --per_device_train_batch_size 4 \
     --gradient_accumulation_steps 16 \
