@@ -1,0 +1,33 @@
+CUDA_VISIBLE_DEVICES=0,1 NPROC_PER_NODE=2 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Qwen3-8B \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/rewritten_mechat/Cpsy_40_rewritten.json /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/rewritten_mechat/mechat_40_rewritten.json /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/rewritten/PsyDTCorpus_40_rewritten.json \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 4096 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 16 \
+    --per_device_eval_batch_size 16 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-4 \
+    --eval_steps 100 \
+    --save_steps 500 \
+    --lora_rank 16 \
+    --lora_alpha 32 \
+    --use_liger_kernel True \
+    --packing True \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --loss_scale default+ignore_empty_think \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/rewrite \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/rewrite \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/rewrite/run.log 2>&1 

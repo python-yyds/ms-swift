@@ -7,6 +7,13 @@ __pycache__/
 test.py
 # C extensions
 *.so
+*.safetensors
+tokenizer.json
+vocab.json
+merges.txt
+model-*.bin
+*.json
+*.jinja
 
 # Distribution / packaging
 .Python

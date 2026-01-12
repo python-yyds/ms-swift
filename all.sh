@@ -1,0 +1,547 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Llama-3.2-1B-Instruct \
+    --model_type llama3_2 \
+    --template llama3_2 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/hh_rlhf.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 500 \
+    --save_steps 200 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama1b/hh_rlhf \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama1b/hh_rlhf \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama1b/hh_rlhf/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Llama-3.2-1B-Instruct \
+    --model_type llama3_2 \
+    --template llama3_2 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/helpsteer2.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama1b/helpsteer2 \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama1b/helpsteer2 \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama1b/helpsteer2/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Llama-3.2-1B-Instruct \
+    --model_type llama3_2 \
+    --template llama3_2 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/ultrafeedback.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama1b/ultrafeedback \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama1b/ultrafeedback \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama1b/ultrafeedback/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Llama-3.2-3B-Instruct \
+    --model_type llama3_2 \
+    --template llama3_2 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/hh_rlhf.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 500 \
+    --save_steps 200 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama3b/hh_rlhf \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama3b/hh_rlhf \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama3b/hh_rlhf/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Llama-3.2-3B-Instruct \
+    --model_type llama3_2 \
+    --template llama3_2 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/helpsteer2.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama3b/helpsteer2 \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama3b/helpsteer2 \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama3b/helpsteer2/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Llama-3.2-3B-Instruct \
+    --model_type llama3_2 \
+    --template llama3_2 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/ultrafeedback.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama3b/ultrafeedback \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama3b/ultrafeedback \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama3b/ultrafeedback/run.log 2>&1 
+
+
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Llama-3.1-8B-Instruct \
+    --model_type llama3_1 \
+    --template llama3_2 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/hh_rlhf.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 500 \
+    --save_steps 200 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama8b/hh_rlhf \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama8b/hh_rlhf \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama8b/hh_rlhf/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Llama-3.1-8B-Instruct \
+    --model_type llama3_1 \
+    --template llama3_2 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/helpsteer2.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 500 \
+    --save_steps 200 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama8b/helpsteer2 \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama8b/helpsteer2 \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama8b/helpsteer2/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Llama-3.1-8B-Instruct \
+    --model_type llama3_1 \
+    --template llama3_2 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/ultrafeedback.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 500 \
+    --save_steps 200 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama8b/ultrafeedback \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama8b/ultrafeedback \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/llama8b/ultrafeedback/run.log 2>&1 
+
+
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Qwen3-4B \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/hh_rlhf.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 500 \
+    --save_steps 200 \
+    --loss_scale last_round_with_ignore_empty_think \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen4b/hh_rlhf \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen4b/hh_rlhf \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen4b/hh_rlhf/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Qwen3-4B \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/helpsteer2.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round_with_ignore_empty_think \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen4b/helpsteer2 \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen4b/helpsteer2 \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen4b/helpsteer2/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Qwen3-4B \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/ultrafeedback.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round_with_ignore_empty_think \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen4b/ultrafeedback \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen4b/ultrafeedback \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen4b/ultrafeedback/run.log 2>&1 
+
+
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/qwen-2.5-7b-instruct \
+    --model_type qwen2_5 \
+    --template qwen2_5 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/hh_rlhf.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 500 \
+    --save_steps 200 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen7b/hh_rlhf \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen7b/hh_rlhf \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen7b/hh_rlhf/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/qwen-2.5-7b-instruct \
+    --model_type qwen2_5 \
+    --template qwen2_5 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/helpsteer2.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen7b/helpsteer2 \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen7b/helpsteer2 \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen7b/helpsteer2/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/qwen-2.5-7b-instruct \
+    --model_type qwen2_5 \
+    --template qwen2_5 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/ultrafeedback.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen7b/ultrafeedback \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen7b/ultrafeedback \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen7b/ultrafeedback/run.log 2>&1 
+
+
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Qwen3-8B \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/hh_rlhf.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 500 \
+    --save_steps 200 \
+    --loss_scale last_round_with_ignore_empty_think \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen8b/hh_rlhf \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen8b/hh_rlhf \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen8b/hh_rlhf/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Qwen3-8B \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/helpsteer2.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round_with_ignore_empty_think \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen8b/helpsteer2 \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen8b/helpsteer2 \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen8b/helpsteer2/run.log 2>&1 
+
+CUDA_VISIBLE_DEVICES=0,1,2,3 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Qwen3-8B \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/lzy_exp/datasets/converted_json/ultrafeedback.jsonl \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 1024 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 16 \
+    --per_device_eval_batch_size 4 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-5 \
+    --gradient_accumulation_steps 1 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --loss_scale last_round_with_ignore_empty_think \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --use_liger_kernel True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen8b/ultrafeedback \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen8b/ultrafeedback \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/qwen8b/ultrafeedback/run.log 2>&1 
