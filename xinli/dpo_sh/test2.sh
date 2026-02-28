@@ -1,0 +1,71 @@
+CUDA_VISIBLE_DEVICES=4,5,6,7 NPROC_PER_NODE=4 \
+swift rlhf \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_sft/checkpoint-162-merged \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/test2/PsyDTCorpus_DPO.json \
+    --dataset_num_proc 32 \
+    --split_dataset_ratio 0.01 \
+    --max_length 4096 \
+    --warmup_ratio 0.05 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --learning_rate 1e-6 \
+    --num_train_epochs 2.0 \
+    --gradient_accumulation_steps 20 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --lora_rank 16 \
+    --lora_alpha 32 \
+    --beta 0.1 \
+    --rpo_alpha 0 \
+    --loss_scale ignore_empty_think \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --swanlab_exp_name psy_dpo_test2_sft \
+    --use_liger_kernel True \
+    --padding_free True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_dpo_test2_sft \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_dpo_test2_sft/ \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_dpo_test2_sft/run.log 2>&1
+
+
+
+CUDA_VISIBLE_DEVICES=4,5,6,7 NPROC_PER_NODE=4 \
+swift rlhf \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_sft_true/checkpoint-168-merged \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/test2/PsyDTCorpus_DPO_1_1.json /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/test2/json_DPO.json /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/test2/user_DPO.json \
+    --dataset_num_proc 32 \
+    --split_dataset_ratio 0.01 \
+    --max_length 4096 \
+    --warmup_ratio 0.05 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --learning_rate 1e-6 \
+    --num_train_epochs 2.0 \
+    --gradient_accumulation_steps 20 \
+    --eval_steps 100 \
+    --save_steps 100 \
+    --attn_impl flash_attention_2 \
+    --neftune_noise_alpha 0 \
+    --lora_rank 16 \
+    --lora_alpha 32 \
+    --beta 0.1 \
+    --rpo_alpha 0 \
+    --loss_scale ignore_empty_think \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --swanlab_exp_name true_dpo_test2_1_1_sft \
+    --use_liger_kernel True \
+    --padding_free True \
+    --add_version False \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/true_dpo_test2_1_1_sft \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/true_dpo_test2_1_1_sft/ \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/true_dpo_test2_1_1_sft/run.log 2>&1

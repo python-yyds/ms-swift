@@ -13,6 +13,7 @@ vocab.json
 merges.txt
 model-*.bin
 *.json
+*.jsonl
 *.jinja
 
 # Distribution / packaging

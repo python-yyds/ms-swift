@@ -1,10 +1,10 @@
-CUDA_VISIBLE_DEVICES=2,3,4,5,6,7 NPROC_PER_NODE=6 \
+CUDA_VISIBLE_DEVICES=5,6 NPROC_PER_NODE=2 \
 swift sft \
     --torch_dtype bfloat16 \
     --model /mnt/ai4s/models_storage/llm-models/Qwen3-8B \
     --model_type qwen3 \
     --template qwen3 \
-    --dataset /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/rewrite_117/clean_MeChat_filtered_high_scores_40_rewritten.json /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/rewrite_117/clean_PsyDTCorpus_filtered_high_scores_40_rewritten.json \
+    --dataset /mnt/ai4s/zhouhaojie/xinli/data_pre/high_score/add_system/clean_PsyDTCorpus_filtered_high_scores_40_rewritten_with_system.json AI-ModelScope/alpaca-gpt4-data-zh#2000 AI-ModelScope/COIG-CQIA:zhihu#1000 AI-ModelScope/COIG-CQIA:human_value#1000 \
     --dataset_num_proc 16 \
     --split_dataset_ratio 0.1 \
     --max_length 8192 \
@@ -20,13 +20,14 @@ swift sft \
     --lora_alpha 32 \
     --use_liger_kernel True \
     --attn_impl flash_attention_2 \
+    --use_liger_kernel True \
+    --add_version False \
     --neftune_noise_alpha 0 \
     --truncation_strategy delete \
     --loss_scale ignore_empty_think \
     --report_to swanlab \
     --swanlab_token nD9wW6qFrHetvCQo0rfCm \
-    --use_liger_kernel True \
-    --add_version False \
-    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen3_8/116_no_gen \
-    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen3_8/116_no_gen \
-    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen3_8/116_no_gen/run.log 2>&1 
+    --swanlab_exp_name psy_gen \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen3_8/psy_gen \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen3_8/psy_gen \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen3_8/psy_gen/run.log 2>&1 

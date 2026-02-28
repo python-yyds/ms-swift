@@ -1,0 +1,68 @@
+CUDA_VISIBLE_DEVICES=0,2,3,7 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Qwen3-8B \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/zhouhaojie/xinli/xinli_data/PsyDTCorpus_train_mulit_turn_packing.json AI-ModelScope/COIG-CQIA:zhihu#1000 \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 4096 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 4 \
+    --per_device_eval_batch_size 1 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-4 \
+    --eval_steps 500 \
+    --save_steps 500 \
+    --lora_rank 16 \
+    --lora_alpha 32 \
+    --use_liger_kernel True \
+    --attn_impl flash_attention_2 \
+    --use_liger_kernel True \
+    --add_version False \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --loss_scale ignore_empty_think \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --swanlab_exp_name psy_sft \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_sft \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_sft \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_sft/run.log 2>&1 
+
+
+CUDA_VISIBLE_DEVICES=0,2,3,7 NPROC_PER_NODE=4 \
+swift sft \
+    --torch_dtype bfloat16 \
+    --model /mnt/ai4s/models_storage/llm-models/Qwen3-8B \
+    --model_type qwen3 \
+    --template qwen3 \
+    --dataset /mnt/ai4s/zhouhaojie/xinli/xinli_data/PsyDTCorpus_train_mulit_turn_packing.json AI-ModelScope/COIG-CQIA:zhihu#1000 /mnt/ai4s/zhouhaojie/xinli/data_pre/true_data/translated_processed/json_processed.json /mnt/ai4s/zhouhaojie/xinli/data_pre/true_data/translated_processed/user_processed.json \
+    --dataset_num_proc 16 \
+    --split_dataset_ratio 0.1 \
+    --max_length 4096 \
+    --task_type causal_lm \
+    --per_device_train_batch_size 4 \
+    --gradient_accumulation_steps 4 \
+    --per_device_eval_batch_size 1 \
+    --num_train_epochs 2 \
+    --learning_rate 1e-4 \
+    --eval_steps 500 \
+    --save_steps 500 \
+    --lora_rank 16 \
+    --lora_alpha 32 \
+    --use_liger_kernel True \
+    --attn_impl flash_attention_2 \
+    --use_liger_kernel True \
+    --add_version False \
+    --neftune_noise_alpha 0 \
+    --truncation_strategy delete \
+    --loss_scale ignore_empty_think \
+    --report_to swanlab \
+    --swanlab_token nD9wW6qFrHetvCQo0rfCm \
+    --swanlab_exp_name psy_sft_true \
+    --output_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_sft_true \
+    --logging_dir /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_sft_true \
+    --ignore_args_error True > /mnt/ai4s/zhouhaojie/liuzhanyang/21/nice/ms-swift/output/xinli/qwen38_dpo/psy_sft_true/run.log 2>&1 
